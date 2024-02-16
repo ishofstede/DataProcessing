@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in line 3 of /homes/ishofstede/thema11_lessen/DataProcessing/les1/Snakefile:
+Missing input files for rule all:
+results/C.txt
+results/B.txt
+results/A.txt

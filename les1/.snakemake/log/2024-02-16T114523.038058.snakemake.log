@@ -1,0 +1,3 @@
+NameError in line 5 of /homes/ishofstede/thema11_lessen/DataProcessing/les1/Snakefile:
+name 'SAMPLES' is not defined
+  File "/homes/ishofstede/thema11_lessen/DataProcessing/les1/Snakefile", line 5, in <module>

@@ -1,0 +1,23 @@
+samples = ["A", "B", "C"] 
+
+rule all:
+    input:
+        expand('data/samples/{sample}.fastq', sample = samples)
+
+rule bwa_map:
+    input:
+        "data/genome.fa",
+        "data/samples/{sample}.fastq"
+    output:
+        "mapped_reads/{sample}.bam"
+    shell:
+        "bwa mem {input} | samtools view -Sb - > {output}"
+
+rule samtools_sort:
+    input:
+        "mapped_reads/{samples}.bam"
+    output:
+        "sorted_reads/{samples}.bam"
+    shell:
+        "samtools_sort -T sorted_reads/{wildcards.sample}"
+        "-O bam {input} > {output}"
